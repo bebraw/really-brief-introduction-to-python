@@ -1,85 +1,643 @@
 <!DOCTYPE html>
+
+<!--
+  Slide System:
+  Authors: Luke Mahé (code)
+           Marcin Wichary (code and design)
+           
+           Dominic Mazzoni (browser compatibility)
+           Charles Chen (ChromeVox support)
+
+  URL: http://code.google.com/p/html5slides/
+-->
+
 <html>
-<head>
-  <meta charset='utf-8'>
+  <head>
+    <title>Really Brief Introduction to Python</title>
 
-  <title>bebraw/really-brief-introduction-to-python @ GitHub</title>
-
-  <style type="text/css">
-    body {
-      margin-top: 1.0em;
-      background-color: #7573a9;
-      font-family: Helvetica, Arial, FreeSans, san-serif;
-      color: #000000;
+    <meta charset='utf-8'>
+    <script
+      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+  </head>
+  
+  <style>
+    /* Your individual styles here, or just use inline styles if that’s
+       what you want. */
+    article {
+      background-color: white;
+      background: url(http://koodilehto.fi/images/logo_black.png) 820px 625px no-repeat; /* TODO: point to proper logo */
     }
-    #container {
-      margin: 0 auto;
-      width: 700px;
+    
+    .source {
+      background-color: white;
+      padding: 0.5em;
+      opacity: 0.9;
     }
-    h1 { font-size: 3.8em; color: #8a8c56; margin-bottom: 3px; }
-    h1 .small { font-size: 0.4em; }
-    h1 a { text-decoration: none }
-    h2 { font-size: 1.5em; color: #8a8c56; }
-    h3 { text-align: center; color: #8a8c56; }
-    a { color: #8a8c56; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-    pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
   </style>
-</head>
 
-<body>
-  <a href="https://github.com/bebraw/really-brief-introduction-to-python"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
+  <body style='display: none'>
 
-  <div id="container">
+    <section class='slides layout-regular'>
+      
+      <!-- Your slides (<article>s) go here. Delete or comment out the
+           slides below. -->
+      
+     <article class='fill'>
+        <h3>
+          Really Brief Introduction to Python
+        </h3>
+                <p>
+          Juho Vepsäläinen
+          <br>
+          Feb 9, 2012
+        </p>
+        <p>
+          <img src='http://farm6.staticflickr.com/5257/5513104816_d070e35a03_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/lesmontsdore/5513104816/">http://www.flickr.com/photos/lesmontsdore/5513104816/</a>
+        </div>
+      </article>
+      
+      <article>
+        <q>
+          Beautiful > ugly.<br/>
+          Explicit > implicit.<br/>
+          Simple > complex.
+        </q>
+        <div class='author'>
+          import this
+        </div>
+      </article>
 
-    <div class="download">
-      <a href="https://github.com/bebraw/really-brief-introduction-to-python/zipball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/zip.png"></a>
-      <a href="https://github.com/bebraw/really-brief-introduction-to-python/tarball/master">
-        <img border="0" width="90" src="https://github.com/images/modules/download/tar.png"></a>
-    </div>
+      <article class='nobackground'>
+        <h3>
+          python.org
+        </h3>
+        
+        <iframe src='http://www.python.org'></iframe>
+      </article>
+            
+      <article class='fill'>
+        <p>
+          <img src='http://farm2.staticflickr.com/1225/838792022_38dd5f236a_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/mrtopf/838792022/">http://www.flickr.com/photos/mrtopf/838792022/</a>
+        </div>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm3.staticflickr.com/2721/4126538080_883d6b5bb1_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/billsophoto/4126538080/">http://www.flickr.com/photos/billsophoto/4126538080/</a>
+        </div>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm1.staticflickr.com/194/472097903_6147a13e9d_o.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/oskay/472097903/">http://www.flickr.com/photos/oskay/472097903/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Hello World!
+        </h3>
+        <section>
+        <pre>
+# python 2
+print "Hello World!"
 
-    <h1><a href="https://github.com/bebraw/really-brief-introduction-to-python">really-brief-introduction-to-python</a>
-      <span class="small">by <a href="https://github.com/bebraw">bebraw</a></span></h1>
+# python 3
+print("Hello World!")
 
-    <div class="description">
-      Presentation slides
-    </div>
+# python 2.6+
+from __future__ import print_function # disables old behavior
 
-    
+print("Hello World!")
+</pre>
+        </section>
+      </article>
+      
+       <article>
+        <h3>
+          Hello World variants at REPL!
+        </h3>
+        <section>
+        <pre>
+>>> s = 'Hello world!'
+>>> dir(s)
+['__add__', '__class__', '__contains__', '__delattr__', '__doc__',
+...
+'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+>>> s.upper()
+'HELLO WORLD!'
+>>> s.title()
+'Hello World!'
+>>> s.upper.__doc__
+'S.title() -> string\n\nReturn a titlecased version of S,...'
+>>> help(s.title) # :q to exit
+>>> quit()
+</pre>
+        </section>
+      </article>
+      
+       <article>
+        <h3>
+          Implementing "title" - Spec
+        </h3>
+        <section>
+        <pre>
+def title(s):
+    pass
 
-    
+assert title('Hello world!') == 'Hello World!'
+assert title('hi') == 'Hi'
+assert title() == None
+</pre>
+        </section>
+      </article>
+      
+       <article>
+        <h3>
+          Implementing "title" - Implementation
+        </h3>
+        <section>
+        <pre>
+def title(s=None):
+    # idea: split, set first to upper return joined
+    to_upper = lambda a: a[0].upper() + a[1:]
+    return ' '.join(map(to_upper, s.split())) if s else None
 
-    
+assert title('Hello world!') == 'Hello World!'
+assert title('hi') == 'Hi'
+assert title() == None
+</pre>
+        </section>
+      </article>
 
-    
+       <article>
+        <h3>
+          Implementing "title" - Docs
+        </h3>
+        <section>
+        <pre>
+def title(s=None):
+    ''' Converts given 's' to title format
 
-    
+    Example: "foo bar" -> "Foo Bar"
+    '''
+    to_upper = lambda a: a[0].upper() + a[1:]
+    return ' '.join(map(to_upper, s.split())) if s else None
 
-    
-      <h2>Contact</h2>
-      <p>Juho Vepsäläinen (bebraw@gmail.com)<br/>      </p>
-    
+assert title('Hello world!') == 'Hello World!'
+assert title('hi') == 'Hi'
+assert title() == None
+</pre>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm3.staticflickr.com/2255/2159280574_aa7f92bb76_z.jpg?zz=1'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/stefz/2159280574/">http://www.flickr.com/photos/stefz/2159280574/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Function Syntax
+        </h3>
+        <section>
+        <pre>
+id = lambda a: a
 
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="https://github.com/bebraw/really-brief-introduction-to-python/zipball/master">zip</a> or
-      <a href="https://github.com/bebraw/really-brief-introduction-to-python/tarball/master">tar formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/bebraw/really-brief-introduction-to-python</pre>
-    </p>
+def id(a):
+    return a
 
-    <div class="footer">
-      get the source code on GitHub : <a href="https://github.com/bebraw/really-brief-introduction-to-python">bebraw/really-brief-introduction-to-python</a>
-    </div>
+def default_ret():
+    pass # returns None
 
-  </div>
+def get_params(a, *args, **kwargs):
+    return a, args, kwargs
+</pre>
+        </section>
+      </article>
 
-</body>
+      <article>
+        <h3>
+          First Class Citizen
+        </h3>
+        <section>
+        <pre>
+def my_map(cb, items):
+    ret = []
+
+    for i, a in enumerate(items):
+        ret.append(cb(i, a))
+
+    return ret
+
+my_map(lambda i, a: a ** 2, range(5))
+</pre>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm4.staticflickr.com/3184/2523773349_da6fb12c67_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/prettywarstl/2523773349/">http://www.flickr.com/photos/prettywarstl/2523773349/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Generators
+        </h3>
+        <section>
+        <pre>
+>>> def num_gen(n):
+...    for i in reversed(range(n)):
+...        yield i
+...
+>>> a = num_gen(6)
+>>> a.next()
+5
+>>> [i for i in a]
+[4, 3, 2, 1, 0]
+>>> # see also __iter__ and itertools module
+</pre>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm1.staticflickr.com/47/110315663_112b1d05f2_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/tunruh/110315663/">http://www.flickr.com/photos/tunruh/110315663/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Data Types
+        </h3>
+        <section>
+        <pre>
+>>> type(5)
+&lt;type 'int'&gt;
+>>> type(5.5)
+&lt;type 'float'&gt;
+>>> type('foo')
+&lt;type 'str'&gt;
+>>> type('foo'.upper)
+&lt;type 'builtin_function_or_method'&gt;
+>>> import json
+>>> type(json)
+&lt;type 'module'&gt;
+>>> type(title) # the func we created
+&lt;type 'function'&gt;
+>>> type(None)
+&lt;type 'NoneType'&gt;
+</pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          Tuples and Lists
+        </h3>
+        <section>
+        <pre>
+>>> a = ('foo', ) # tuple
+>>> a.count(2)
+0
+>>> a.index('bar')
+Traceback (most recent call last):
+  File "&lt;stdin&gt;", line 1, in &lt;module&gt;
+ValueError: tuple.index(x): x not in tuple
+>>>
+>>> b = [] # list, remember to try dir and help!
+>>> b.append('foo')
+>>> b.extend(['bar', 'baz'])
+>>> b
+['foo', 'bar', 'baz']
+>>> 'foo' in b
+True
+</pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          Dicts and Sets
+        </h3>
+        <section>
+        <pre>
+>>> c = {'joe': 123} # dict
+>>> c['jack'] = 423
+>>> c
+{'joe': 123, 'jack': 423}
+>>> 'joe' in c
+True
+>>> c.get('moe', 555)
+555
+>>>
+>>> d = set([2, 3, 4])
+>>> d.add(3)
+>>> d
+set([2, 3, 4])
+>>>
+>>> e = frozenset(d) # e.add fails now
+>>> 3 in e
+True
+</pre>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm4.staticflickr.com/3296/2806034569_356e265d8d_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/clintjcl/2806034569/">http://www.flickr.com/photos/clintjcl/2806034569/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Anatomy of a Class
+        </h3>
+        <section>
+        <pre>
+class MyObject(object): # supports MI!
+    a = 3 # class attribute
+
+    def __init__(self, a, *args, **kwargs): # initializer
+        # super(MyObject, self).__init__(a, args, kwargs)
+        self.boo = 'foo' # instance attribute
+
+    def __add__(self, other):
+        pass # magic method for '+' op
+
+    def do_something(self): # method
+        pass # _ = "protected", __ = "private"
+
+    @classmethod
+    def bar(cls, a, b):
+        pass # call using MyObject().foo(123, 234)
+
+    @staticmethod
+    def foo(a, b):
+        pass # call using MyObject.foo(234, 123) or MyObject().foo(234, 123)
+</pre>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm1.staticflickr.com/12/18862634_0be7c591ef_o.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/takashi/18862634/">http://www.flickr.com/photos/takashi/18862634/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          File Operations
+        </h3>
+        <section>
+        <pre>
+>>> f = open('/path/to/file.txt', 'w')
+>>> f.write('some content')
+>>> f.close()
+>>>
+>>> # that close is kind of uncool (easy to forget)
+>>> # enter context managers (with)
+>>> with open('/path/to/file.txt', 'w') as f:
+...     f.write('some content')
+
+</pre>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm1.staticflickr.com/129/358114830_cfb7c81549_o.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/avlxyz/358114830/">http://www.flickr.com/photos/avlxyz/358114830/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Exceptions
+        </h3>
+        <section>
+        <pre>
+try:
+    f = open('somefile.txt')
+    s = f.readline()
+    i = int(s.strip())
+except IOError as (errno, strerror)
+    print "I/O error({0}): {1}".format(errno, strerror)
+except ValueError:
+    print "Could not convert data to an integer."
+except:
+    print "Unexpected error:", sys.exc_info()[0]
+    raise
+else:
+    print 'no exceptions'
+finally:
+    print 'doing this in any case'
+</pre>
+          <div class='source'><a href="http://docs.python.org/tutorial/errors.html#handling-exceptions">http://docs.python.org/tutorial/errors.html#handling-exceptions</a></div>
+        </section>
+      </article>
+      
+      <article class='fill'>
+        <p>
+          <img src='http://farm3.staticflickr.com/2406/2097239111_d67bf8d2f2_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/rofi/2097239111/">http://www.flickr.com/photos/rofi/2097239111/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Map, filter, reduce
+        </h3>
+        <section>
+        <pre>
+>>> map(lambda a: a * 2, range(5))
+[0, 2, 4, 6, 8]
+>>>
+>>> filter(lambda a: a > 3, range(5))
+[4]
+>>>
+>>> reduce(lambda a, b: a + b, range(5))
+10
+>>> # note that reduce was moved to functools in py3k
+</pre>
+        </section>
+      </article>
+      
+      <article>
+        <h3>
+          Comprehensions
+        </h3>
+        <section>
+        <pre>
+>>> [a * 2 for a in range(5)] # works as map
+[0, 2, 4, 6, 8]
+>>>
+>>> [a for a in range(5) if a > 3] # works as filter
+[4]
+>>>
+>>> [a + b for a, b in zip(range(5), range(5))]
+[0, 2, 4, 6, 8]
+>>>
+>>> (a * 2 for a in range(5))
+&lt;generator object &lt;genexpr&gt; at 0x10f365140&gt;
+>>>
+>>> # set and dict comprehensions are included in py3k
+</pre>
+        </section>
+      </article>
+
+      <article>
+        <h3>
+          functools
+        </h3>
+        <section>
+        <pre>
+>>> import functools as fun
+>>>
+>>> squares = fun.partial(map, lambda a: a ** 2)
+>>> squares(range(5))
+[0, 1, 4, 9, 16]
+</pre>
+        </section>
+      </article>
+
+      <article class='fill'>
+        <p>
+          <img src='http://farm3.staticflickr.com/2605/4051083769_0dce9a1c85_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/tiemposdelruido/4051083769/">http://www.flickr.com/photos/tiemposdelruido/4051083769/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Packages and Modules
+        </h3>
+        <ul>
+          <li>app.py</li>
+          <li>audio/__init__.py - important! marks as package</li>
+          <li>audio/effects.py</li>
+          <li>audio/utils.py</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Module Structure
+        </h3>
+        <section>
+        <pre>
+import sys
+import math as m
+from django import forms
+from json import * # don't use this! pollutes namespace
+
+def fun():
+    pass
+
+# optional hint for * import
+__all__ = ['fun']
+</pre>
+        </section>
+      </article>
+               
+      <article class='fill'>
+        <p>
+          <img src='http://farm2.staticflickr.com/1341/802764156_872d4a924e_b.jpg'>
+        </p>
+        <div class='source'>
+          <a href="http://www.flickr.com/photos/tambako/802764156/">http://www.flickr.com/photos/tambako/802764156/</a>
+        </div>
+      </article>
+      
+      <article>
+        <h3>
+          Overview
+        </h3>
+        <ul>
+          <li>Versatile, dynamically typed scripting language</li>
+          <li>Surprisingly powerful (batteries included)</li>
+          <li>Fairly popular (<a href="http://www.tiobe.com/index.php/content/paperinfo/tpci/index.html">8th at TIOBE</a>)</li>
+          <li>Easy to grasp basics, lots of features</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h4>Pros</h4>
+        <ul>
+          <li>High level language</li>
+          <li>Fast to develop</li>
+          <li>Easy to test</li>
+          <li>Well supported</li>
+        </ul>
+        <h4>Cons</h4>
+        <ul>
+          <li>Not so fast</li>
+          <li>Mediocre IDE support</li>
+          <li>Easy to make subtle mistakes</li>
+          <li>Py2 -> Py3k transition still ongoing</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Pro Tips
+        </h3>
+        <ul>
+          <li>Use <a href="http://pypi.python.org/pypi/virtualenv">virtualenv</a> and <a href="http://www.doughellmann.com/projects/virtualenvwrapper/">virtualenvwrapper</a></li>
+          <li>Explore <a href="http://pypi.python.org/">PyPI</a></li>
+          <li>Utilize <a href="http://pypi.python.org/pypi/pip">pip</a> and requirements.txt</li>
+          <li>When in doubt, REPL and test things</li>
+        </ul>
+      </article>
+      
+      <article>
+        <h3>
+          Thank you!
+        </h3>
+        
+        <ul>
+          <li>
+            <a href='http://www.koodilehto.fi'>koodilehto.fi</a>
+          </li>
+        </ul>
+      </article>
+
+    </section>
+
+  </body>
 </html>
