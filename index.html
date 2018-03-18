@@ -4,7 +4,7 @@
   Slide System:
   Authors: Luke Mahé (code)
            Marcin Wichary (code and design)
-           
+
            Dominic Mazzoni (browser compatibility)
            Charles Chen (ChromeVox support)
 
@@ -15,11 +15,11 @@
   <head>
     <title>Really Brief Introduction to Python</title>
 
-    <meta charset='utf-8'>
+    <meta charset="utf-8">
     <script
-      src='http://html5slides.googlecode.com/svn/trunk/slides.js'></script>
+      src="slides.js"></script>
   </head>
-  
+
   <style>
     /* Your individual styles here, or just use inline styles if that’s
        what you want. */
@@ -27,7 +27,7 @@
       background-color: white;
       background: url(http://koodilehto.fi/images/logo_black.png) 820px 625px no-repeat; /* TODO: point to proper logo */
     }
-    
+
     .source {
       background-color: white;
       padding: 0.5em;
@@ -35,14 +35,14 @@
     }
   </style>
 
-  <body style='display: none'>
+  <body style="display: none">
 
-    <section class='slides layout-regular'>
-      
+    <section class="slides layout-regular template-default">
+
       <!-- Your slides (<article>s) go here. Delete or comment out the
            slides below. -->
-      
-     <article class='fill'>
+
+     <article class="fill">
         <h3>
           Really Brief Introduction to Python
         </h3>
@@ -52,59 +52,57 @@
           Feb 9, 2012
         </p>
         <p>
-          <img src='http://farm6.staticflickr.com/5257/5513104816_d070e35a03_b.jpg'>
+          <img src="http://farm6.staticflickr.com/5257/5513104816_d070e35a03_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/lesmontsdore/5513104816/">http://www.flickr.com/photos/lesmontsdore/5513104816/</a>
         </div>
       </article>
-      
+
       <article>
         <q>
           Beautiful > ugly.<br/>
           Explicit > implicit.<br/>
           Simple > complex.
         </q>
-        <div class='author'>
+        <div class="author">
           import this
         </div>
       </article>
 
-      <article class='nobackground'>
+      <article class="nobackground">
         <h3>
           python.org
         </h3>
-        
-        <iframe src='http://www.python.org'></iframe>
       </article>
-            
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm2.staticflickr.com/1225/838792022_38dd5f236a_b.jpg'>
+          <img src="http://farm2.staticflickr.com/1225/838792022_38dd5f236a_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/mrtopf/838792022/">http://www.flickr.com/photos/mrtopf/838792022/</a>
         </div>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm3.staticflickr.com/2721/4126538080_883d6b5bb1_b.jpg'>
+          <img src="http://farm3.staticflickr.com/2721/4126538080_883d6b5bb1_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/billsophoto/4126538080/">http://www.flickr.com/photos/billsophoto/4126538080/</a>
         </div>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm1.staticflickr.com/194/472097903_6147a13e9d_o.jpg'>
+          <img src="http://farm1.staticflickr.com/194/472097903_6147a13e9d_o.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/oskay/472097903/">http://www.flickr.com/photos/oskay/472097903/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Hello World!
@@ -124,30 +122,30 @@ print("Hello World!")
 </pre>
         </section>
       </article>
-      
+
        <article>
         <h3>
           Hello World variants at REPL!
         </h3>
         <section>
         <pre>
->>> s = 'Hello world!'
+>>> s = "Hello world!"
 >>> dir(s)
-['__add__', '__class__', '__contains__', '__delattr__', '__doc__',
+["__add__", "__class__", "__contains__", "__delattr__", "__doc__",
 ...
-'strip', 'swapcase', 'title', 'translate', 'upper', 'zfill']
+"strip", "swapcase", "title", "translate", "upper", "zfill"]
 >>> s.upper()
-'HELLO WORLD!'
+"HELLO WORLD!"
 >>> s.title()
-'Hello World!'
+"Hello World!"
 >>> s.upper.__doc__
-'S.title() -> string\n\nReturn a titlecased version of S,...'
+"S.title() -> string\n\nReturn a titlecased version of S,..."
 >>> help(s.title) # :q to exit
 >>> quit()
 </pre>
         </section>
       </article>
-      
+
        <article>
         <h3>
           Implementing "title" - Spec
@@ -157,13 +155,13 @@ print("Hello World!")
 def title(s):
     pass
 
-assert title('Hello world!') == 'Hello World!'
-assert title('hi') == 'Hi'
+assert title("Hello world!") == "Hello World!"
+assert title("hi") == "Hi"
 assert title() == None
 </pre>
         </section>
       </article>
-      
+
        <article>
         <h3>
           Implementing "title" - Implementation
@@ -173,10 +171,10 @@ assert title() == None
 def title(s=None):
     # idea: split, set first to upper return joined
     to_upper = lambda a: a[0].upper() + a[1:]
-    return ' '.join(map(to_upper, s.split())) if s else None
+    return " ".join(map(to_upper, s.split())) if s else None
 
-assert title('Hello world!') == 'Hello World!'
-assert title('hi') == 'Hi'
+assert title("Hello world!") == "Hello World!"
+assert title("hi") == "Hi"
 assert title() == None
 </pre>
         </section>
@@ -189,29 +187,29 @@ assert title() == None
         <section>
         <pre>
 def title(s=None):
-    ''' Converts given 's' to title format
+    """ Converts given "s" to title format
 
     Example: "foo bar" -> "Foo Bar"
-    '''
+    """
     to_upper = lambda a: a[0].upper() + a[1:]
-    return ' '.join(map(to_upper, s.split())) if s else None
+    return " ".join(map(to_upper, s.split())) if s else None
 
-assert title('Hello world!') == 'Hello World!'
-assert title('hi') == 'Hi'
+assert title("Hello world!") == "Hello World!"
+assert title("hi") == "Hi"
 assert title() == None
 </pre>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm3.staticflickr.com/2255/2159280574_aa7f92bb76_z.jpg?zz=1'>
+          <img src="http://farm3.staticflickr.com/2255/2159280574_aa7f92bb76_z.jpg?zz=1">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/stefz/2159280574/">http://www.flickr.com/photos/stefz/2159280574/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Function Syntax
@@ -250,16 +248,16 @@ my_map(lambda i, a: a ** 2, range(5))
 </pre>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm4.staticflickr.com/3184/2523773349_da6fb12c67_b.jpg'>
+          <img src="http://farm4.staticflickr.com/3184/2523773349_da6fb12c67_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/prettywarstl/2523773349/">http://www.flickr.com/photos/prettywarstl/2523773349/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Generators
@@ -279,16 +277,16 @@ my_map(lambda i, a: a ** 2, range(5))
 </pre>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm1.staticflickr.com/47/110315663_112b1d05f2_b.jpg'>
+          <img src="http://farm1.staticflickr.com/47/110315663_112b1d05f2_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/tunruh/110315663/">http://www.flickr.com/photos/tunruh/110315663/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Data Types
@@ -296,20 +294,20 @@ my_map(lambda i, a: a ** 2, range(5))
         <section>
         <pre>
 >>> type(5)
-&lt;type 'int'&gt;
+&lt;type "int"&gt;
 >>> type(5.5)
-&lt;type 'float'&gt;
->>> type('foo')
-&lt;type 'str'&gt;
->>> type('foo'.upper)
-&lt;type 'builtin_function_or_method'&gt;
+&lt;type "float"&gt;
+>>> type("foo")
+&lt;type "str"&gt;
+>>> type("foo".upper)
+&lt;type "builtin_function_or_method"&gt;
 >>> import json
 >>> type(json)
-&lt;type 'module'&gt;
+&lt;type "module"&gt;
 >>> type(title) # the func we created
-&lt;type 'function'&gt;
+&lt;type "function"&gt;
 >>> type(None)
-&lt;type 'NoneType'&gt;
+&lt;type "NoneType"&gt;
 </pre>
         </section>
       </article>
@@ -320,20 +318,20 @@ my_map(lambda i, a: a ** 2, range(5))
         </h3>
         <section>
         <pre>
->>> a = ('foo', ) # tuple
+>>> a = ("foo", ) # tuple
 >>> a.count(2)
 0
->>> a.index('bar')
+>>> a.index("bar")
 Traceback (most recent call last):
   File "&lt;stdin&gt;", line 1, in &lt;module&gt;
 ValueError: tuple.index(x): x not in tuple
 >>>
 >>> b = [] # list, remember to try dir and help!
->>> b.append('foo')
->>> b.extend(['bar', 'baz'])
+>>> b.append("foo")
+>>> b.extend(["bar", "baz"])
 >>> b
-['foo', 'bar', 'baz']
->>> 'foo' in b
+["foo", "bar", "baz"]
+>>> "foo" in b
 True
 </pre>
         </section>
@@ -345,13 +343,13 @@ True
         </h3>
         <section>
         <pre>
->>> c = {'joe': 123} # dict
->>> c['jack'] = 423
+>>> c = {"joe": 123} # dict
+>>> c["jack"] = 423
 >>> c
-{'joe': 123, 'jack': 423}
->>> 'joe' in c
+{"joe": 123, "jack": 423}
+>>> "joe" in c
 True
->>> c.get('moe', 555)
+>>> c.get("moe", 555)
 555
 >>>
 >>> d = set([2, 3, 4])
@@ -365,16 +363,16 @@ True
 </pre>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm4.staticflickr.com/3296/2806034569_356e265d8d_b.jpg'>
+          <img src="http://farm4.staticflickr.com/3296/2806034569_356e265d8d_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/clintjcl/2806034569/">http://www.flickr.com/photos/clintjcl/2806034569/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Anatomy of a Class
@@ -386,10 +384,10 @@ class MyObject(object): # supports MI!
 
     def __init__(self, a, *args, **kwargs): # initializer
         # super(MyObject, self).__init__(a, args, kwargs)
-        self.boo = 'foo' # instance attribute
+        self.boo = "foo" # instance attribute
 
     def __add__(self, other):
-        pass # magic method for '+' op
+        pass # magic method for "+" op
 
     def do_something(self): # method
         pass # _ = "protected", __ = "private"
@@ -404,44 +402,44 @@ class MyObject(object): # supports MI!
 </pre>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm1.staticflickr.com/12/18862634_0be7c591ef_o.jpg'>
+          <img src="http://farm1.staticflickr.com/12/18862634_0be7c591ef_o.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/takashi/18862634/">http://www.flickr.com/photos/takashi/18862634/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           File Operations
         </h3>
         <section>
         <pre>
->>> f = open('/path/to/file.txt', 'w')
->>> f.write('some content')
+>>> f = open("/path/to/file.txt", "w")
+>>> f.write("some content")
 >>> f.close()
 >>>
 >>> # that close is kind of uncool (easy to forget)
 >>> # enter context managers (with)
->>> with open('/path/to/file.txt', 'w') as f:
-...     f.write('some content')
+>>> with open("/path/to/file.txt", "w") as f:
+...     f.write("some content")
 
 </pre>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm1.staticflickr.com/129/358114830_cfb7c81549_o.jpg'>
+          <img src="http://farm1.staticflickr.com/129/358114830_cfb7c81549_o.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/avlxyz/358114830/">http://www.flickr.com/photos/avlxyz/358114830/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Exceptions
@@ -449,7 +447,7 @@ class MyObject(object): # supports MI!
         <section>
         <pre>
 try:
-    f = open('somefile.txt')
+    f = open("somefile.txt")
     s = f.readline()
     i = int(s.strip())
 except IOError as (errno, strerror)
@@ -460,23 +458,23 @@ except:
     print "Unexpected error:", sys.exc_info()[0]
     raise
 else:
-    print 'no exceptions'
+    print "no exceptions"
 finally:
-    print 'doing this in any case'
+    print "doing this in any case"
 </pre>
-          <div class='source'><a href="http://docs.python.org/tutorial/errors.html#handling-exceptions">http://docs.python.org/tutorial/errors.html#handling-exceptions</a></div>
+          <div class="source"><a href="http://docs.python.org/tutorial/errors.html#handling-exceptions">http://docs.python.org/tutorial/errors.html#handling-exceptions</a></div>
         </section>
       </article>
-      
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm3.staticflickr.com/2406/2097239111_d67bf8d2f2_b.jpg'>
+          <img src="http://farm3.staticflickr.com/2406/2097239111_d67bf8d2f2_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/rofi/2097239111/">http://www.flickr.com/photos/rofi/2097239111/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Map, filter, reduce
@@ -495,7 +493,7 @@ finally:
 </pre>
         </section>
       </article>
-      
+
       <article>
         <h3>
           Comprehensions
@@ -534,15 +532,15 @@ finally:
         </section>
       </article>
 
-      <article class='fill'>
+      <article class="fill">
         <p>
-          <img src='http://farm3.staticflickr.com/2605/4051083769_0dce9a1c85_b.jpg'>
+          <img src="http://farm3.staticflickr.com/2605/4051083769_0dce9a1c85_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/tiemposdelruido/4051083769/">http://www.flickr.com/photos/tiemposdelruido/4051083769/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Packages and Modules
@@ -554,7 +552,7 @@ finally:
           <li>audio/utils.py</li>
         </ul>
       </article>
-      
+
       <article>
         <h3>
           Module Structure
@@ -564,26 +562,26 @@ finally:
 import sys
 import math as m
 from django import forms
-from json import * # don't use this! pollutes namespace
+from json import * # don"t use this! pollutes namespace
 
 def fun():
     pass
 
 # optional hint for * import
-__all__ = ['fun']
+__all__ = ["fun"]
 </pre>
         </section>
       </article>
-               
-      <article class='fill'>
+
+      <article class="fill">
         <p>
-          <img src='http://farm2.staticflickr.com/1341/802764156_872d4a924e_b.jpg'>
+          <img src="http://farm2.staticflickr.com/1341/802764156_872d4a924e_b.jpg">
         </p>
-        <div class='source'>
+        <div class="source">
           <a href="http://www.flickr.com/photos/tambako/802764156/">http://www.flickr.com/photos/tambako/802764156/</a>
         </div>
       </article>
-      
+
       <article>
         <h3>
           Overview
@@ -595,7 +593,7 @@ __all__ = ['fun']
           <li>Easy to grasp basics, lots of features</li>
         </ul>
       </article>
-      
+
       <article>
         <h4>Pros</h4>
         <ul>
@@ -612,7 +610,7 @@ __all__ = ['fun']
           <li>Py2 -> Py3k transition still ongoing</li>
         </ul>
       </article>
-      
+
       <article>
         <h3>
           Pro Tips
@@ -624,15 +622,15 @@ __all__ = ['fun']
           <li>When in doubt, REPL and test things</li>
         </ul>
       </article>
-      
+
       <article>
         <h3>
           Thank you!
         </h3>
-        
+
         <ul>
           <li>
-            <a href='http://www.koodilehto.fi'>koodilehto.fi</a>
+            <a href="https://www.survivejs.com">SurviveJS</a>
           </li>
         </ul>
       </article>
@@ -641,3 +639,4 @@ __all__ = ['fun']
 
   </body>
 </html>
+"
